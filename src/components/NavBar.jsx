@@ -1,10 +1,10 @@
 
 import { NavLink } from 'react-router-dom'
-import arr from '../assets/image/arr-removebg-preview.png'
+import arr from '../assets/image/Add a heading-removebg-preview.png`'
 
 const NavBar = () => {
   return (
-    <div>q
+    <div>
         <div className=' flex  justify-between '>
           <div className=' w-40'>
             <img src={arr} alt="Ar-rahman sooto automobile"/>

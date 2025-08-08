@@ -70,7 +70,7 @@ const Contact = () => {
           </iframe>
         </div>
           
-        <div className="text-center mt-5 boder-solid">
+        <div className="text-center mt-5 boder">
           <IconPercentage stroke={2} className="h-32 w-40 ml-9" />
           <h2 className="text-2xl mt-10 uppercase ">online <span className="text-blue-800">appointment</span></h2>
           <p className="text-gray-500 mt-10 capitalize">book your appointment now</p>
