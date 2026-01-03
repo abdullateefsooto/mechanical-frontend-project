@@ -1,136 +1,106 @@
-import "../assets/style/footer.css"
-import { Link } from "react-router-dom"
-import { IconBrandWhatsapp, IconCarCrane, IconLocation, IconCheck, IconMail, IconPhone } from '@tabler/icons-react'
+import "../assets/style/footer.css";
+import { Link } from "react-router-dom";
+import { IconBrandWhatsapp, IconCarCrane, IconLocation, IconCheck, IconMail, IconPhone } from '@tabler/icons-react';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer-container">
+
+        {/* Top Section */}
         <div className="footer-top">
-          <div className="footer-hotlines">
-            <h3 className="footer-heading">hotlines</h3>
+          <div className="footer-card">
+            <h3>Hotlines</h3>
             <div className="footer-flex">
-              <IconBrandWhatsapp stroke={1} className="footer-icon" />
-              <div className="footer-hotline-text">
-                <p className="footer-text">mobile: <span>08066244696</span></p>
-                <p className="footer-text">assistance: <span>07063470681</span></p>
+              <IconBrandWhatsapp className="footer-icon" />
+              <div className="footer-info">
+                <p>Mobile: <span>08033445250</span></p>
+                <p>Assistance: <span>07063470681</span></p>
               </div>
             </div>
           </div>
 
-          <div className="footer-address">
-            <h3 className="footer-heading">Ar-Rahman Sooto Autocare</h3>
+          <div className="footer-card">
+            <h3>Location</h3>
             <div className="footer-flex">
-              <IconLocation stroke={1} className="footer-icon-wide" />
-              <div className="footer-text">
-                <p>
-                  klm. 5 Lasu isheri road Alhaji Ede bus stop, Igando lagos
-                  state. inside NNPC Petrol station
-                </p>
+              <IconLocation className="footer-icon" />
+              <div className="footer-info">
+                <p>KLM. 5 Lasu Isheri Road, Alhaji Ede Bus Stop, Igando, Lagos State</p>
               </div>
             </div>
           </div>
 
-          <div className="footer-assistance">
-            <h3 className="footer-heading">24/7 assistance</h3>
-            <div className="footer-flex gap">
-              <IconCarCrane stroke={1} className="footer-icon-crane" />
-              <div className="footer-text">
-                <p>
-                  Each customer has an account managers that will respond to your vehicle needs during and outside office hours.
-                </p>
+          <div className="footer-card">
+            <h3>24/7 Assistance</h3>
+            <div className="footer-flex">
+              <IconCarCrane className="footer-icon" />
+              <div className="footer-info">
+                <p>Each customer has an account manager to respond to your vehicle needs during and outside office hours.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Middle Grid */}
+        {/* Middle Section */}
         <div className="footer-middle">
           {/* About Us */}
           <div className="footer-about">
-            <h2 className="footer-subheading">about us</h2>
-            <p className="footer-divider"></p>
-            <p className="footer-text">
-              klm. 5 Lasu isheri road Alhaji Ede bus stop, Igando lagos state. inside NNPC Petrol station
-            </p>
-            <div className="footer-hotline-text">
-              <p className="footer-text">mobile: <span>08066244696</span></p>
-              <p className="footer-text">assistance: <span>07063470681</span></p>
-            </div>
-
-            <div className="footer-social">
-              <a href="http://wa.me/+2348033445250" target="_blank" rel="noopener noreferrer">
-                <IconBrandWhatsapp className="footer-social-icon" />
-              </a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=arramansooto01@gmail.com" target="_blank" rel="noopener noreferrer">
-                <IconMail className="footer-social-icon" />
-              </a>
-              <a href="tel:+2348033445250">
-                <IconPhone className="footer-social-icon" />
-              </a>
+            <h4>About Us</h4>
+            <p>Ar-Raman Sooto Autocare delivers top-notch vehicle maintenance and repair services across Nigeria.</p>
+            <div className="footer-contact-links">
+              <a href="http://wa.me/+2348033445250"><IconBrandWhatsapp /></a>
+              <a href="mailto:arramansooto01@gmail.com"><IconMail /></a>
+              <a href="tel:+2348033445250"><IconPhone /></a>
             </div>
           </div>
 
           {/* Services */}
           <div className="footer-services">
-            <h2 className="footer-subheading">our services</h2>
-            <p className="footer-divider"></p>
-            <ul className="footer-list">
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> engine diagnosis</li></Link>
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> air conditioning</li></Link>
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> brake repair</li></Link>
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> lube, oil and filters</li></Link>
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> battery testing and replacement</li></Link>
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> transmission services</li></Link>
-              <Link to="service"><li className="footer-list-item"><IconCheck stroke={1.5} /> other car services</li></Link>
+            <h4>Our Services</h4>
+            <ul>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Engine Diagnosis</li></Link>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Air Conditioning</li></Link>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Brake Repair</li></Link>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Oil & Filter</li></Link>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Battery Testing</li></Link>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Transmission Services</li></Link>
+              <Link to="service"><li><IconCheck stroke={1.5} /> Other Car Services</li></Link>
             </ul>
           </div>
 
-          {/* Tags */}
+          {/* Popular Tags */}
           <div className="footer-tags">
-            <h2 className="footer-subheading">popular tags</h2>
-            <p className="footer-divider"></p>
-            <div>
-              <a href="#"><p className="footer-tagss">CNG Conversion</p></a>
-            </div>
-            <div className="footer-tags-container">
-              <a href="#"><p className="footer-tag">diagnosis</p></a>
-              <a href="#"><p className="footer-tag">engine</p></a>
-            </div>
-            <div className="footer-tags-container">
-              <a href="#"><p className="footer-tag">suspension</p></a>
-              <a href="#"><p className="footer-tag">brake</p></a>
-            </div>
-            <div className="footer-tags-container">
-              <a href="#"><p className="footer-tag">transmission</p></a>
-              <a href="#"><p className="footer-tag">filter</p></a>
-              <a href="#"><p className="footer-tag">oil</p></a>
+            <h4>Popular Tags</h4>
+            <div className="tags-container">
+              <span className="tag">CNG Conversion</span>
+              <span className="tag">Diagnosis</span>
+              <span className="tag">Engine</span>
+              <span className="tag">Suspension</span>
+              <span className="tag">Brake</span>
+              <span className="tag">Transmission</span>
+              <span className="tag">Oil</span>
+              <span className="tag">Filter</span>
             </div>
           </div>
 
           {/* Hours */}
           <div className="footer-hours">
-            <h2 className="footer-subheading">hours</h2>
-            <p className="footer-divider"></p>
-            <div className="footer-hours">
-              <a href="#"><p className="footer-hours-list">monday: <span>8:00am - 7:00pm</span></p></a>
-              <a href="#"><p className="footer-hours-list">tuesday: <span>8:00am - 7:00pm</span></p></a>
-              <a href="#"><p className="footer-hours-list">wednesday: <span>8:00am - 7:00pm</span></p></a>
-              <a href="#"><p className="footer-hours-list">thursday: <span>8:00am - 7:00pm</span></p></a>
-              <a href="#"><p className="footer-hours-list">friday: <span>8:00am - 7:00pm</span></p></a>
-              <a href="#"><p className="footer-hours-list">saturday: <span>8:00am - 7:00pm</span></p></a>
-              <a href="#"><p className="footer-hours-list">sunday: closed</p></a>
-            </div>
+            <h4>Hours</h4>
+            <ul>
+              <li>Mon - Sat: 8:00am - 7:00pm</li>
+              <li>Sun: Closed</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom */}
-      <div className="footer-bottom">
-        <p>&copy; copyright 2025 ar-raman sooto autocare</p>
-      </div>
-    </div>
-  )
-}
+        {/* Bottom Section */}
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Ar-Raman Sooto Autocare. All Rights Reserved.</p>
+        </div>
 
-export default Footer
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

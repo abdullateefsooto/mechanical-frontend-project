@@ -1,172 +1,165 @@
 .contact-section {
-  margin-bottom: 40px;
+  padding: 60px 20px;
 }
 
 .contact-container {
-  margin-left: 160px;
-  margin-right: 160px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  flex-wrap: wrap;
-  gap: 20px;
+h3, h2{
+  color: #ef4444;
+  font-size: x-large;
 }
 
-.contact-heading {
-  font-family: serif;
-  text-transform: capitalize;
-  font-size: 20px;
-}
-
-.contact-info {
+/* TOP INFO */
+.contact-info-flex {
   display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
-.contact-info-gap {
-  gap: 12px;
+.contact-box {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-box h3 {
+  text-transform: capitalize;
+  font-family: serif;
+  margin-bottom: 12px;
+}
+
+.contact-box-row {
+  display: flex;
+  gap: 16px;
+  color: #6b7280;
 }
 
 .contact-icon {
   color: #1e3a8a;
-  height: 80px;
+  width: 60px;
+  height: 60px;
+}
+
+.contact-icon.wide {
   width: 80px;
 }
 
-.contact-location-icon {
-  color: #1e3a8a;
-  height: 80px;
-  width: 160px;
+.contact-icon.crane {
+  width: 100px;
 }
 
-.contact-crane-icon {
-  height: 80px;
-  width: 240px;
-  color: #1e3a8a;
+/* FORM */
+.contact-form-wrapper {
+  margin-bottom: 80px;
 }
 
-.contact-info-text {
-  margin-top: 12px;
-}
-
-.contact-subtext {
-  text-transform: capitalize;
-  color: #9ca3af;
-}
-
-.contact-form-title {
+.contact-form-wrapper h2 {
   font-family: serif;
   text-transform: capitalize;
   color: #1e3a8a;
-  font-size: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.contact-form-grid {
+.contact-form {
   display: flex;
-  gap: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.contact-input {
-  background-color: #e5e7eb;
+.contact-form-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #e5e7eb;
   border: 1px solid #d1d5db;
-  text-transform: capitalize;
-  width: 256px;
-  height: 64px;
-  font-size: large;
   border-radius: 12px;
-}
-.contact-input:focus{
-  border-color: #3d3ddd;
-  box-shadow: 0 0 5px rgba(20, 12, 69, 0.3);
-  outline: none;
+  padding: 16px;
+  font-size: 16px;
 }
 
-.contact-input-gap {
-  margin-top: 20px;
+.contact-form textarea {
+  width: 360px;
+  height: 220px;
 }
 
-.contact-textarea {
-  background-color: #e5e7eb;
-  border: 1px solid #d1d5db;
-  text-transform: capitalize;
-  width: 384px;
-  font-size: x-large;
-  height: 240px;
-  border-radius: 12px;
+.contact-form input {
+  width: 260px;
 }
-.contact-textarea:focus{
-  border-color: #3d3ddd;
-  box-shadow: 0 0 5px rgba(20, 12, 69, 0.3);
+
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none;
+  border-color: #2563eb;
 }
 
 .contact-btn {
-  border-style: dashed;
-  background-color: #1d4ed8;
-  border-radius: 8px;
-  padding: 16px 8px;
+  margin-top: 20px;
+  background: #1d4ed8;
   color: white;
-  font-weight: bold;
-  margin-top: 16px;
-  font-size: large;
-  text-transform: capitalize;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-.contact-map-appointment {
+/* MAP + APPOINTMENT */
+.contact-bottom-flex {
   display: flex;
-  gap: 128px;
+  gap: 60px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .contact-map {
-  border-radius: 8px;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 650px;
+  height: 420px;
+  border-radius: 12px;
   border: 0;
 }
 
 .appointment-card {
   text-align: center;
-  margin-top: 20px;
+  flex: 1;
 }
 
 .appointment-icon {
-  height: 128px;
-  width: 160px;
-  margin-left: 36px;
-}
-
-.appointment-title {
-  font-size: 24px;
-  margin-top: 40px;
-  text-transform: uppercase;
-}
-
-.appointment-highlight {
+  width: 120px;
+  height: 120px;
   color: #1e40af;
 }
 
-.appointment-subtext {
-  color: #6b7280;
-  margin-top: 40px;
-  text-transform: capitalize;
+.appointment-card h2 {
+  margin-top: 20px;
+  text-transform: uppercase;
 }
 
-.appointment-btn-wrapper {
-  margin-top: 40px;
+.appointment-card span {
+  color: #1e40af;
+}
+
+.appointment-card p {
+  margin: 20px 0;
+  color: #6b7280;
 }
 
 .appointment-btn {
-  border-radius: 16px;
-  background-color: #1e40af;
+  display: inline-block;
+  background: #1e40af;
   color: white;
-  padding: 8px 12px;
+  padding: 12px 20px;
+  border-radius: 14px;
   text-decoration: none;
-  font-size: large;
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 1px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-transform: capitalize;
-}
 
-.appointment-btn:hover {
-  text-decoration: underline;
 }

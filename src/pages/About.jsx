@@ -1,5 +1,3 @@
-import at from "../assets/image/diagnose.jpg"
-import on from "../assets/image/diagno.jpg"
 import me from "../assets/image/image_02.webp"
 import he from "../assets/image/image_07.webp"
 import cng from "../assets/image/cng.jpg"
@@ -12,13 +10,13 @@ const About = () => {
 
       <div className="about-grid">
         <div>
-          <h4 className="acme-regular">Welcome to Ar-Rahman Sooto Autocare</h4>
+          <h4 className="acme-regular">Welcome to Ar-Raman Sooto Autocare</h4>
             <p>
              Your trusted destination for all things automotive!Our passion for cars drives everything we do. Whether you're a car enthusiast, a seasoned mechanic, or simply someone looking to learn more about vehicles, we are here to provide you with valuable insights, resources, and services to keep your automotive journey smooth and informed.
             </p>
           <h4 className="acme-regular">Who We Are</h4>
             <p>
-              At Ar-Rahman Sooto Autocare, we are a team of automotive experts, enthusiasts, and professionals dedicated to delivering reliable information and top-notch services. With years of experience in the automotive industry, we understand the needs of car owners, repair professionals, and enthusiasts alike.
+              At Ar-Raman Sooto Autocare, we are a team of automotive experts, enthusiasts, and professionals dedicated to delivering reliable information and top-notch services. With years of experience in the automotive industry, we understand the needs of car owners, repair professionals, and enthusiasts alike.
             </p>
           <h4 className="acme-regular">What We Offer</h4>
             <ul className="ul">
@@ -40,10 +38,7 @@ const About = () => {
             </ul>
         </div>
         <div>
-          {/* <img src={at} className="about-image" alt="" /> */}
           <div className="about-image">
-            {/* <img src={at} alt="" /> */}
-            {/* <img src={on} alt="" /> */}
           </div>
          <div className="cng">
           <img src={cng} alt="" />
@@ -56,7 +51,7 @@ const About = () => {
         <h1 className="mission-title">our mission</h1>
         <div className="mission-grid">
           <div>
-          <h4 className="acme-regular">At Ar-Rahman sooto</h4>
+          <h4 className="acme-regular">At Ar-Raman sooto</h4>
             <p className="mission-text">
               Our mission is to empower you with the knowledge and tools to make
               the most of your vehicle. We believe every car owner deserves to

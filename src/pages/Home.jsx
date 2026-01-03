@@ -1,227 +1,112 @@
-import {  IconCarCrane, IconCheckbox, IconChevronRight, IconTool  } from '@tabler/icons-react'
-import lx from '../assets/image/LX.jpg'
-import "../assets/style/home.css"
+import {  IconCarCrane,  IconCheckbox,  IconChevronRight,  IconTool,  IconPhone } from '@tabler/icons-react';
+import lx from '../assets/image/LX.jpg';
+import heroImg from '../assets/image/TOYODA.jpg';
+import "../assets/style/home.css";
 import { Link } from 'react-router-dom';
 
-const home = () => {
+const Home = () => {
   return (
-    <div className=''>
-        <div>
+    <div className="home-container">
 
-            {/* hero banner */}
-            <div className='backGround'>
-                <div>
-                  <div>
-                    <div>
-                      <p className='wel'>Welcome to Ar-Raman Sooto Autocare</p>
-                      <p className='wel'>we give you top-notch services.</p>
-                    </div>
-                  </div>
-                  <div className='premium'>
-                    <div  className='round'>
-                      <p  className='welll'>we make your car last longer</p>
-                      <p className='well'>using premium lubricants, geniue part and our expert mechanics.</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div  className='ground'>
-                      <p className='wel'>Driving safe is first.</p>                  
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-
-
-              <div className='schedule' >
-                <p className='diag'>Schedule a Diagnostics Appointment for your Vehicle</p>
-                {/* <link to="/book" className='book'>book appointment </link> */}
-                <Link to="/book" className='book'>Book Appointment</Link>
-              </div>
-              {/* what we do */}
-              <div>
-                <h1 className='what'>what we do</h1>
-                <p className='offer'>We offer a full range of garage services to vehicle owners located in Nigeria.Our professinals know how to handle a wide range of car services.</p>
-              </div>
-
-              <div className="all-what">
-                  <div className="">
-                  <div className='icon'><IconTool stroke={1.75} className='iconTool'/></div>
-                    <h1 className='repair'>
-                    vehicle mentainance & repair</h1>
-                    <p className=' line'></p>
-                    <p className='mt-5'>
-                    Ensuring your vehicle runs smoothly and efficiently is our top priority. Experience dealership-grade service with the warmth and attention of a trusted local mechanic. The best performance of your car is just a visit away
-                    </p>
-                  </div>
-                  <div className="">
-                    <div className='icon'><IconCarCrane stroke={1.55} className='iconTool'/></div>
-                    <h1 className="repair">
-                    collision 
-                    </h1>
-                    <p className='mt-5'>
-                    Utilizing the latest techniques and state-of-the-art equipment, we meticulously restore your vehicle to its original condition, ensuring safety and preserving its value. Trust us to make your vehicle look and drive like the accident never happened.
-                    </p>
-                  </div>
-              </div>
-
-                  {/* vehicle serviced */}
-              <div className='service'>
-                <div><img className='lx' src={lx} alt="" /></div>
-                <div className=' service-vehicle'>
-                  <h2 className='vehicle-serviced'>vehicles serviced</h2>
-                  <h4 className='we'>
-                    We provide top notch maintenance service for all types of vehicles.
-                  </h4>
-                  <h4 className='are '>
-                    We are experienced in servicing and repair of the following makes:
-                  </h4>
-                 <div className='grid '>
-                  <div className='mr-5'>
-                    <ul>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' />toyota</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> ford</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> honda</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> bmw</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> mercedes benz</li>
-                    </ul>
-                  </div>
-                  <div className='mr-5'>
-                    <ul>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> lexus</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> range rover</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> chevrolet</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> hyundai</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> mazda</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> mini cooper</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> volkswagen</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> bentley</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> kia</li>
-                      <li><IconCheckbox stroke={2} className='icon-checkbox' /> nissan</li>
-                    </ul>
-                  </div>
-                 </div>
-
-                </div>
-              </div>
-
-                  {/*rendered service*/}
-              <div>
-                  <h1 className='render'>rendered services</h1>
-                  <div>
-                    <p className='change'>We can help you with everything from an engine change to an oil change.</p>
-                    <p className=' handle'>We can handle any problem on both foreign and domestic vehicles.</p>
-                  </div>
-                <div className='flex flex-col mt-10'>
-                  <div className="">
-                    <h1 className='service-rendered'>engine diagnostics</h1>
-                    <div className='rendered-service '>
-                      {/* <IconEngine className='h-24 w-64' /> */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><g fill="none" stroke="#140c45" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="48" stroke-dashoffset="48" d="M11 9h6v10h-6.5l-2 -2h-2.5v-6.5l1.5 -1.5Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="48;0"/></path><path fill="#140c45" fill-opacity="0" d="M17 13h0v-3h0v8h0v-3h0z" opacity="0"><animate fill="freeze" attributeName="d" begin="0.6s" dur="0.2s" values="M17 13h0v-3h0v8h0v-3h0z;M17 13h4v-3h1v8h-1v-3h-4z"/><set fill="freeze" attributeName="fill-opacity" begin="0.8s" to="1"/><set fill="freeze" attributeName="opacity" begin="0.6s" to="1"/></path><path d="M6 14h0M6 11v6" opacity="0"><animate fill="freeze" attributeName="d" begin="0.8s" dur="0.2s" values="M6 14h0M6 11v6;M6 14h-4M2 11v6"/><set fill="freeze" attributeName="opacity" begin="0.8s" to="1"/></path><path d="M11 9v0M8 9h6" opacity="0"><animate fill="freeze" attributeName="d" begin="1s" dur="0.2s" values="M11 9v0M8 9h6;M11 9v-4M8 5h6"/><set fill="freeze" attributeName="opacity" begin="1s" to="1"/></path></g></svg>
-                      <p className='team'>Our team of professionals are trained to pinpoint and address any engine-related issues, ensuring your vehicle is always road-ready</p>
-                    </div> 
-                  </div>
-                  <div className="">
-                    <h1 className='service-rendered'>oil and filter</h1>
-                    <div className='rendered-service'>
-                      {/* <IconDroplet className='h-24 w-64' /> */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><path fill="#140c45" d="M22 12.5s2 2.17 2 3.5a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.33 2-3.5 2-3.5M6 6h4a1 1 0 0 1 1 1a1 1 0 0 1-1 1H9v2h2c.74 0 1.39.4 1.73 1l6.51-3.76l3.26 1.89c.5.27.64.87.37 1.37c-.28.47-.87.64-1.37.36l-2.1-1.21l-3.65 6.32c-.34.61-1 1.03-1.75 1.03H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h2V8H6a1 1 0 0 1-1-1a1 1 0 0 1 1-1m-1 6v3h9l2.06-3.57l-3.46 2l-.91-1.43zM.38 9.21L2.09 7.5c.41-.39 1.02-.39 1.41 0s.39 1 0 1.41l-1.71 1.71c-.39.38-1.02.38-1.41 0C0 10.23 0 9.6.38 9.21"/></svg>
-                      <p className='wifi'>At Ar-Rahman Sooto Autocare, we provide high-quality oil and filter changes that not only protect your engine from wear and tear but also enhance its efficiency, ensuring your car operates at its optimal potential.</p>
-                    </div>
-                  </div>
-                  <div className="">
-                    <h1 className='service-rendered'>transmission service</h1>
-                    <div className="rendered-service">
-                      {/* <IconTool className='h-24 w-64'/> */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 20 20"><path fill="#140c45" d="M16.73 7.563c.403.404.783.864 1.115 1.344a.75.75 0 0 1-1.235.852A7.968 7.968 0 0 0 4.4 8.623c-.32.322-.64.712-.932 1.133a.75.75 0 1 1-1.233-.855c.34-.49.716-.95 1.105-1.338a9.47 9.47 0 0 1 13.39 0M5.478 9.451a6.444 6.444 0 0 1 8.652-.417c-.516.095-1 .39-1.314.887a4.944 4.944 0 0 0-7.192 1.851a.75.75 0 0 1-1.338-.677a6.4 6.4 0 0 1 1.192-1.644m4.303 6.524l1.075-2.153a1.242 1.242 0 1 0-1.075 2.153m1.702-3.41l.674-1.348a4.13 4.13 0 0 0-5.044.623a4.1 4.1 0 0 0-.86 1.274a.75.75 0 0 0 1.373.6c.136-.31.32-.586.547-.813c.9-.9 2.289-1.011 3.31-.335m2.119-2.011l-3.496 6.998A1 1 0 0 0 11.002 19h6.996a1 1 0 0 0 .895-1.448l-3.5-6.999a1 1 0 0 0-1.79 0m1.395 1.941v3.002a.5.5 0 1 1-1 0v-3.002a.5.5 0 1 1 1 0m-.5 5.504a.5.5 0 1 1 0-1a.5.5 0 0 1 0 1"/></svg>
-                      <p className='wifi'>Whether manual or automatic, the transmission is the heart of vehicle performance. Our transmission services are tailored to maintain smooth gear shifts and longevity, making sure you enjoy a seamless driving experience</p>
-                    </div>
-                  </div>
-                  <div className="">
-                    <h1 className='service-rendered'>air conditional</h1>
-                    <div className='rendered-service'>
-                      {/* <IconGasStation className='h-24 w-64'/> */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><path fill="#140c45" d="M6.59.66c2.34-1.81 4.88.4 5.45 3.84c.43 0 .85.12 1.23.34c.52-.6.98-1.42.8-2.34c-.42-2.15 1.99-3.89 4.28-.92c1.81 2.34-.4 4.88-3.85 5.45c0 .43-.11.86-.34 1.24c.6.51 1.42.97 2.34.79c2.13-.42 3.88 1.98.91 4.28c-2.34 1.81-4.88-.4-5.45-3.84c-.43 0-.85-.13-1.22-.35c-.52.6-.99 1.43-.81 2.35c.42 2.14-1.99 3.89-4.28.92c-1.82-2.35.4-4.89 3.85-5.45c0-.43.13-.85.35-1.23c-.6-.51-1.42-.98-2.35-.8c-2.13.42-3.88-1.98-.91-4.28M5 16h2a2 2 0 0 1 2 2v6H7v-2H5v2H3v-6a2 2 0 0 1 2-2m0 2v2h2v-2zm7.93-2H15l-2.93 8H10zM18 16h3v2h-3v4h3v2h-3a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2"/></svg>
-                      <p>No matter the season, Ar-Rahman Sooto Autocare ensures a comfortable drive. Our experts specialize in AC system repairs, making sure your vehicle interiror remains cool</p>
-                    </div>
-                  </div>
-                  <div className="">
-                    <h1 className='service-rendered'>battery testing and replacement</h1>
-                    <div className="rendered-service">
-                      {/* <IconBattery1 className='h-24 w-64'/> */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><path fill="#140c45" d="M4 3v3H1v14h22V6h-3V3h-6v3h-4V3zM3 8h18v10H3zm12 2v2h-2v2h2v2h2v-2h2v-2h-2v-2zM5 12v2h6v-2z"/></svg>
-                      <p className='bat'>Do not get caught off-guard. At Ar-Rahman Sooto Autocare, our reliable battery diagnostics and replacement services guarantee you are always powered up, ready for any journey ahead.</p>
-                    </div>
-                  </div>
-                  <div className="">
-                    <h1 className='service-rendered'>comprehensive vehicle inspection</h1>
-                    <div className='rendered-service'>
-                      {/* <IconCar className='h-24 w-64'/> */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="90" viewBox="0 0 512 512"><path fill="#140c45" d="M188.287 169.428c-28.644-.076-60.908 2.228-98.457 8.01c-4.432.62-47.132 24.977-58.644 41.788c-11.512 16.812-15.45 48.813-15.45 48.813c-3.108 13.105-1.22 34.766-.353 36.872c1.17 4.56 7.78 8.387 19.133 11.154C35.84 295.008 53.29 278.6 74.39 278.574c22.092 0 40 17.91 40 40a40 40 0 0 1-.392 5.272c.59.008 1.26.024 1.82.03l239.266 1.99a40 40 0 0 1-.693-7.292c0-22.09 17.91-40 40-40c22.092 0 40 17.91 40 40c0 2.668-.266 5.33-.796 7.944l62.186.517c1.318-22.812 6.86-46.77-7.024-66.72c-5.456-7.84-31.93-22.038-99.03-32.66c-34.668-17.41-68.503-37.15-105.35-48.462c-28.41-5.635-59.26-9.668-96.09-9.765m-17.197 11.984c5.998.044 11.5.29 16.014.81l7.287 48.352c-41.43-5.093-83.647-9.663-105.964-27.5c.35-5.5 7.96-13.462 16.506-16.506c4.84-1.724 40.167-5.346 66.158-5.156zm34.625.348c25.012.264 62.032 2.69 87.502 13.94c12.202 5.65 35.174 18.874 50.537 30.55l-6.35 10.535c-41.706-1.88-97.288-4.203-120.1-6.78l-11.59-48.245zM74.39 294.574a24 24 0 0 0-24 24a24 24 0 0 0 24 24a24 24 0 0 0 24-24a24 24 0 0 0-24-24m320 0a24 24 0 0 0-24 24a24 24 0 0 0 24 24a24 24 0 0 0 24-24a24 24 0 0 0-24-24"/></svg>
-                      <p className='car'>With meticulous attention to detail, we assess every aspect of your vehicle to ensure it runs smoothly and safely, giving you peace of mind on the road.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-                  {/*why choose us */}
-              <div>
-                <div>
-                  <h1 className='why'>why choose us</h1>
-                </div>
-                <div>
-                    <div className='rendered-service'>
-                      <IconChevronRight className="icon-chevron" />
-                      <p className='mt-6 ml-3'>
-                        At Ar-Rahman Sooto Autocare, we are passionate about revolutionizing
-                        the automotive industry by delivering top-notch solutions tailored to
-                        your needs. Here's what sets us apart:
-                      </p>
-                    </div>
-                    <div className='rendered-service'>
-                      <IconChevronRight className="icon-chevron" />
-                      <p className='mt-5'>
-                        With years of experience in the automotive field, our team of
-                        certified professionals is dedicated to providing exceptional quality
-                        and innovative solutions. Whether it's maintenance, repairs, or custom
-                        builds, we have the skills and knowledge to exceed your expectations.
-                      </p>
-                    </div>
-                    <div className='rendered-service'>
-                      <IconChevronRight className="icon-chevron" />
-                      <p className='mt-5'>
-                        Your satisfaction is our priority. We pride ourselves on delivering
-                        personalized service, clear communication, and timely solutions. From
-                        the moment you step through our doors, you'll experience a seamless
-                        and hassle-free process.
-                      </p>
-                    </div>
-                    <div className='rendered-service'>
-                    <i className=" fa-whatsapp "></i>
-                      {/* <IconChevronRight className='icon-checkbox h-12 w-12 mt-5 mr-2' /> */}
-                      <IconChevronRight className="icon-chevron" />
-
-                      <p className='mt-5'>
-                        Choose Ar-Rahman Sooto Autocare, Your Partner in Automotive
-                        Excellence. Let us keep you on the road with confidence. Contact us
-                        today to experience automotive solutions designed with you in mind!!!
-                      </p>
-                    </div>
-                </div>
-              </div>
-              
-              
-
-
+      {/* HERO BANNER */}
+      <section className="hero-overlay">
+        <img src={heroImg} alt="AutoCare" className="hero-bg"/>
+        <div className="hero-content">
+          <h1>Ar-Raman Sooto Autocare</h1>
+          <p>Top-notch vehicle care, made simple.</p>
+          <div className="hero-buttons">
+            <Link to="/book" className="btn-book">Book Appointment</Link>
+            <a href="tel:+2348033445250" className="btn-call"><IconPhone /> Call Us Now</a>
+          </div>
         </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section>
+        <h1 className='section-title'>what we do</h1>
+        <div className="cards-container">
+          <div className="float-card">
+            <IconTool stroke={1.75} className="card-icon"/>
+            <h2>Vehicle Maintenance</h2>
+            <p>Ensuring your vehicle runs smoothly and efficiently is our top priority. Experience dealership-grade service with the warmth and attention of a trusted local mechanic. The best performance of your car is just a visit away</p>
+          </div>
+          <div className="float-card">
+            <IconCarCrane stroke={1.75} className="card-icon"/>
+            <h2>Collision Repair</h2>
+            <p>Utilizing the latest techniques and state-of-the-art equipment, we meticulously restore your vehicle to its original condition, ensuring safety and preserving its value. Trust us to make your vehicle look and drive like the accident never happened.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* VEHICLES SERVICED */}
+      <section className="service-section">
+        <div className="vehicles-img">
+          <img src={lx} alt="Vehicles Serviced"/>
+        </div>
+        <div className="vehicles-info">
+          <h2>Vehicles Serviced</h2>
+          <p>Top notch maintenance service for all types of vehicles.</p>
+          <div className="grid">
+            {["Toyota","Ford","Honda","BMW","Mercedes","Lexus","Range Rover","Chevrolet","Hyundai","Mazda","Mini Cooper","Volkswagen","Bentley","Kia","Nissan"].map((car,i)=>(
+              <div className="grid-item" key={i}>
+                <IconCheckbox stroke={2} className="icon-checkbox"/> {car}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RENDERED SERVICES */}
+      <section>
+        <h1 className="section-title">Rendered Services</h1>
+        <div className="cards-container">
+          {[
+            {
+              title: "Engine Diagnostics",
+              description: "Our team of professionals are trained to pinpoint and address any engine-related issues, ensuring your vehicle is always road-ready."
+            },
+            {
+              title: "Oil & Filter",
+              description: "We provide high-quality oil and filter changes that not only protect your engine from wear and tear but also enhance its efficiency, ensuring your car operates at its optimal potential."
+            },
+            {
+              title: "Transmission Service",
+              description: "Smooth gear shifts and long-lasting performance for both manual and automatic transmissions."
+            },
+            {
+              title: "Air Conditioning",
+              description: "Ar-Rahman Sooto Autocare ensures a comfortable drive. Our experts specialize in AC system repairs, making sure your vehicle interiror remains cool."
+            },
+            {
+              title: "Battery Testing & Replacement",
+              description: "Reliable battery checks and replacement so you never get stranded."
+            },
+            {
+              title: "Comprehensive Vehicle Inspection",
+              description: "With meticulous attention to detail, we access every aspect of your vehicle to ensure it runs smoothly and safely, giving you peace of mind on the road."
+            }
+          ].map((service, i) => (
+            <div className="float-card" key={i}>
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section>
+        <h1 className="section-title">Why Choose Us</h1>
+        <div className="why-container">
+          <div className="why-item"><IconChevronRight className="icon-chevron"/> Top-notch automotive solutions tailored to your needs.</div>
+          <div className="why-item"><IconChevronRight className="icon-chevron"/> Certified professionals providing exceptional quality and innovative solutions.</div>
+          <div className="why-item"><IconChevronRight className="icon-chevron"/> Personalized service, clear communication, and timely solutions.</div>
+          <div className="why-item"><IconChevronRight className="icon-chevron"/> Choose us as your trusted partner for automotive excellence.</div>
+        </div>
+      </section>
+
     </div>
   )
 }
 
-export default home
-
-
+export default Home;
