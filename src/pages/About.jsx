@@ -118,7 +118,7 @@ const About = () => {
 
           <h4 className="acme-regular">Training & Workshops</h4>
           <p>
-            We believe in sharing knowledge! At Ar-Raman Sooto Autocare offers training programs and workshops 
+            We believe in sharing knowledge! At Ar-Raman Sooto Autocare we offer training programs and workshops 
             for aspiring mechanics, automotive students, and car enthusiasts. Learn hands-on skills in diagnostics, 
             repairs, maintenance directly from our certified technicians. And for CNG conversion reach out to us.
           </p>
