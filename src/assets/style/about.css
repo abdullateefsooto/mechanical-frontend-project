@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+.acme-regular {
+  font-family: "Acme", sans-serif;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* General */
+.about-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.about-title {
+  text-transform: capitalize;
+  color: #1e3a8a;
+  text-align: center;
+  font-family: serif;
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+.about-title::after{
+   content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ef4444;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* About Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-grid p {
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* Image slider */
+.about-image {
+  width: 100%;
+  height: 380px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  animation: fade 10s infinite ease-in-out;
+}
+
+@keyframes fade {
+  0% { background-image: url('../image/diagnose.jpg'); }
+  50% { background-image: url('../image/diagno.jpg'); }
+  100% { background-image: url('../image/DIAG.jpg'); }
+}
+
+/* CNG images */
+.cng {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cng img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 10px;
+}
+
+/* List */
+.ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.ul li {
+  margin-bottom: 10px;
+}
+
+/* Mission Section */
+.mission-section {
+  margin-top: 100px;
+}
+
+.mission-title {
+  text-transform: capitalize;
+  text-align: center;
+  font-family: serif;
+  color: #1e3a8a;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.mission-title::after{
+   content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ef4444;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.mission-text {
+  line-height: 1.8;
+}
+
+/* Mission images */
+.mission-images {
+  display: flex;
+  gap: 12px;
+}
+
+.mission-image-lg {
+  width: 260px;
+  border-radius: 10px;
+}
+
+.mission-image-sm {
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about-grid,
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-images {
+    justify-content: center;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+}

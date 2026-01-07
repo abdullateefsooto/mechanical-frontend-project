@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Poppins", sans-serif; }
+
+/* NAVBAR */
+.navbar {
+  width:100%;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#1e3a8a;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  border-bottom:2px solid #ef4444;
+  transition:0.3s;
+}
+
+.navbar:hover { background:#162765; }
+
+.logo { width:150px; cursor:pointer; }
+
+.nav-links {
+  display:flex;
+  list-style:none;
+  gap:30px;
+  align-items:center;
+}
+
+.nav-links li a {
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  font-size:18px;
+  text-transform:uppercase;
+  position:relative;
+  padding:5px 0;
+  transition:0.3s;
+}
+.nav-links li a::after {
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#ef4444;
+  left:0;
+  bottom:0;
+  transition:0.3s;
+}
+.nav-links li a:hover::after { width:100%; }
+
+.btn-book, .btn-call {
+  padding:10px 25px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s;
+  text-transform:capitalize;
+}
+.btn-book { 
+  background:#ef4444; 
+  color:white; 
+}
+.btn-book:hover { 
+  background:#ff5f5f; 
+}
+.btn-call { 
+  background:#f3f4f6; 
+  color:#ef4444; 
+}
+.btn-call:hover { 
+  background:white; 
+  color:#ff2b2b; 
+}
+
+/* HAMBURGER */
+.hamburger {
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+  z-index:101;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hamburger { display:block; }
+
+  .nav-links {
+    position:fixed;
+    top:-100%;
+    left:0;
+    width:100%;
+    height:100vh;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#1e3a8a;
+    gap:40px;
+    transition:0.3s;
+  }
+  .nav-links.open { top:0; }
+
+  .nav-links li a, .nav-links li .btn-book, .nav-links li .btn-call {
+    font-size:24px;
+    color:white;
+  }
+
+  .btn-book, .btn-call { padding:12px 30px; }
+}
