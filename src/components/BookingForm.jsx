@@ -5,6 +5,7 @@ const BookingForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     vehicleType: "",
     serviceRequired: "",
     message: "",
@@ -21,7 +22,7 @@ const BookingForm = () => {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:5000/booking", {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/booking`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,10 +31,11 @@ const BookingForm = () => {
     });
 
     if (res.ok) {
-      alert("Booking sent successfully 🚗");
+      alert("Booking sent successfully ✅🚗🚗");
       setFormData({
         name: "",
         email: "",
+        phone: "",
         vehicleType: "",
         serviceRequired: "",
         message: "",
@@ -68,13 +70,25 @@ const BookingForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Email / Phone</label>
+            <label>Email</label>
             <input
-              type="text"
+              type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email or phone"
+              style={{textTransform:"lowercase"}}
+              placeholder="Enter your email address example@gmail.com"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
               required
             />
           </div>
@@ -90,6 +104,7 @@ const BookingForm = () => {
               required
             />
           </div>
+
 
           <div className="form-group">
             <label>Service Required</label>

@@ -12,7 +12,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/contact", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, message }),
@@ -23,7 +23,7 @@ const Contact = () => {
       setName(""); setEmail(""); setPhone(""); setMessage("");
     } catch (err) {
       console.error(err);
-      alert("Failed to send message");
+      alert("Failed to send message❌");
     }
   };
 
@@ -85,6 +85,7 @@ const Contact = () => {
                   type="email" 
                   placeholder="your email" 
                   value={email} 
+                  style={{textTransform:"lowercase"}}
                   onChange={(e) => setEmail(e.target.value)} 
                   required
                 />
