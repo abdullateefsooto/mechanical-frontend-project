@@ -149,4 +149,12 @@
   .about-title {
     font-size: 36px;
   }
+  .cng {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-images {
+    flex-direction: column;
+    align-items: center;
+  }
 }

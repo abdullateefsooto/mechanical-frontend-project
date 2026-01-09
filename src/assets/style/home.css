@@ -229,6 +229,7 @@ section {
   .vehicles-img img {
     width: 90%;
     margin-bottom: 20px;
+    text-align: center;
   }
   .section-title::after {
   content: "";
