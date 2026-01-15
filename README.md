@@ -11,7 +11,7 @@ This project is suitable for real-world mechanic workshops and also serves as a 
 - Clean and professional landing page
 - About Us section
 - Services listing (Engine Repair, Maintenance, Diagnostics, etc.)
-- Contact page with From and location ....
+- Contact page with Form and location ....
 - Fully responsive design (mobile, tablet & desktop)
 - Fast performance and modern user interface
 
@@ -42,12 +42,3 @@ cd mechanic-website
 npm install
 npm run dev
 
-
-
-## 🔗 Backend API
-
-This project is powered by a separate backend service that handles the conact form and the booking.
-
-The backend repository is maintained separately and can be found here:
-
-➡️ Backend Repository: https://github.com/abdullateefsooto/mechanical-backend-project
