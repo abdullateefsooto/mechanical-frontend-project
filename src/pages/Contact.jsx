@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { IconBrandWhatsapp, IconCarCrane, IconLocation, IconPercentage } from "@tabler/icons-react";
 import "../assets/style/contact.css";
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -9,25 +13,43 @@ const Contact = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, message }),
-      });
-      const data = await res.json();
-      alert(data.message);
-      // RESET FORM
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE,
+      {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(() => {
       setName(""); setEmail(""); setPhone(""); setMessage("");
-    } catch (err) {
+      toast.success("message sent successfully ✅");
+    })
+    .catch((err) => {
       console.error(err);
-      alert("Failed to send message❌");
-    }
+      toast.failed("Failed to send message ❌");
+    });
   };
 
+
   return (
+    <div>
+    <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick
+      pauseOnHover
+      draggable
+      theme="dark"
+    />
     <section className="contact-section">
       <div className="contact-container">
 
@@ -76,6 +98,7 @@ const Contact = () => {
                   <div className="contact-form-left">
                 <input 
                   type="text" 
+                  name="name"
                   placeholder="your name" 
                   value={name} 
                   onChange={(e) => setName(e.target.value)} 
@@ -83,6 +106,7 @@ const Contact = () => {
                 />
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="your email" 
                   value={email} 
                   style={{textTransform:"lowercase"}}
@@ -91,6 +115,7 @@ const Contact = () => {
                 />
                 <input 
                   type="tel" 
+                  name="phone"
                   placeholder="your phone" 
                   value={phone} 
                   onChange={(e) => setPhone(e.target.value)} 
@@ -99,6 +124,7 @@ const Contact = () => {
               </div>
 
               <textarea 
+                name="message"
                 placeholder="message" 
                 value={message} 
                 onChange={(e) => setMessage(e.target.value)} 
@@ -137,6 +163,7 @@ const Contact = () => {
 
       </div>
     </section>
+  </div>
   );
 };
 

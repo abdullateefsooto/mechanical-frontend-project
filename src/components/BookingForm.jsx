@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../assets/style/book.css";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -18,40 +21,58 @@ const BookingForm = () => {
     setFormData({ ...formData, [name]: value });
   };
   
-  const handleSubmit = async (e) => {
+
+
+const handleSubmit = (e) => {
   e.preventDefault();
 
-  try {
-    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/booking`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
+  emailjs.send(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_BOOKING_TEMPLATE,
+    {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      vehicleType: formData.vehicleType,
+      serviceRequired: formData.serviceRequired,
+      message: formData.message,
+      preferredDate: formData.preferredDate,
+      preferredTime: formData.preferredTime,
+    },
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  )
+  .then(() => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "", 
+      vehicleType: "",
+      serviceRequired: "",
+      message: "",
+      preferredDate: "",
+      preferredTime: "",
     });
-
-    if (res.ok) {
-      alert("Booking sent successfully ✅🚗🚗");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        vehicleType: "",
-        serviceRequired: "",
-        message: "",
-        preferredDate: "",
-        preferredTime: "",
-      });
-    } else {
-      alert("Something went wrong ❌");
-    }
-  } catch (err) {
-    alert("Server error ❌", err);
-  }
+    toast.success("Booking sent successfully 🚗✅");
+  })
+  .catch((err) => {
+    console.error(err);
+    toast.failed("Failed to send booking ❌");
+  });
 };
 
 
+
   return (
+    <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="dark"
+      />
     <section className="booking-section">
       <div className="booking-form-container">
         <h2>Book a Service Appointment</h2>
@@ -168,6 +189,7 @@ const BookingForm = () => {
         </form>
       </div>
     </section>
+  </div>
   );
 };
 
