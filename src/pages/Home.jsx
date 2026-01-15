@@ -1,4 +1,4 @@
-import {  IconCarCrane,  IconCheckbox,  IconChevronRight,  IconTool,  IconPhone } from '@tabler/icons-react';
+import {  IconCarCrane,  IconCheckbox,  IconChevronRight,  IconTool,  IconPhone, IconBrandAngularFilled } from '@tabler/icons-react';
 import lx from '../assets/image/LX.jpg';
 import heroImg from '../assets/image/TOYODA.jpg';
 import "../assets/style/home.css";
@@ -36,6 +36,13 @@ const Home = () => {
             <p>Utilizing the latest techniques and state-of-the-art equipment, we meticulously restore your vehicle to its original condition, ensuring safety and preserving its value. Trust us to make your vehicle look and drive like the accident never happened.</p>
           </div>
         </div>
+          <div className="float-card" style={{marginTop: '12px'}}>
+              <IconBrandAngularFilled stroke={1.75} className="card-icon"/>
+              <h2>Academy</h2>
+              <p>We believe in sharing knowledge! At Ar-Raman Sooto Autocare we offer training programs and workshops 
+              for aspiring mechanics, automotive students, and car enthusiasts. Learn hands-on skills in diagnostics, 
+              repairs, maintenance directly from our certified technicians. And for CNG conversion reach out to us.</p>
+          </div>
       </section>
 
       {/* VEHICLES SERVICED */}

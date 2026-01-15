@@ -45,6 +45,7 @@
   font-weight: 600;
   color: #1f2933;
   margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .booking-form input {
@@ -53,6 +54,7 @@
   border: 1px solid #d1d5db;
   font-size: 16px;
   transition: border 0.3s, box-shadow 0.3s;
+  text-transform: capitalize;
 }
 
 .booking-form input:focus {

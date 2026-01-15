@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "../assets/style/book.css";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     vehicleType: "",
     serviceRequired: "",
+    message: "",
     preferredDate: "",
     preferredTime: "",
   });
@@ -15,26 +20,64 @@ const BookingForm = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Booking submitted! We will contact you soon.");
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs.send(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_BOOKING_TEMPLATE,
+    {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      vehicleType: formData.vehicleType,
+      serviceRequired: formData.serviceRequired,
+      message: formData.message,
+      preferredDate: formData.preferredDate,
+      preferredTime: formData.preferredTime,
+    },
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  )
+  .then(() => {
     setFormData({
       name: "",
       email: "",
+      phone: "", 
       vehicleType: "",
       serviceRequired: "",
+      message: "",
       preferredDate: "",
       preferredTime: "",
     });
-  };
+    toast.success("Booking sent successfully 🚗✅");
+  })
+  .catch((err) => {
+    console.error(err);
+    toast.failed("Failed to send booking ❌");
+  });
+};
+
+
 
   return (
+    <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="dark"
+      />
     <section className="booking-section">
       <div className="booking-form-container">
         <h2>Book a Service Appointment</h2>
 
-        <form onSubmit={handleSubmit} className="booking-form">
+        <form onSubmit={handleSubmit} method="POST"  className="booking-form">
           <div className="form-group">
             <label>Full Name</label>
             <input
@@ -48,13 +91,25 @@ const BookingForm = () => {
           </div>
 
           <div className="form-group">
-            <label>Email / Phone</label>
+            <label>Email</label>
             <input
-              type="text"
+              type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email or phone"
+              style={{textTransform:"lowercase"}}
+              placeholder="Enter your email address example@gmail.com"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
               required
             />
           </div>
@@ -70,6 +125,7 @@ const BookingForm = () => {
               required
             />
           </div>
+
 
           <div className="form-group">
             <label>Service Required</label>
@@ -94,7 +150,13 @@ const BookingForm = () => {
           </div>
           <div>
             <label>Additional Notes (Optional)</label>  
-            <input type="text" name="message" id="message" placeholder="message" />
+            <input
+              type="text"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="message"
+            />
           </div>
 
           <div className="form-row">
@@ -127,7 +189,9 @@ const BookingForm = () => {
         </form>
       </div>
     </section>
+  </div>
   );
 };
 
 export default BookingForm;
+

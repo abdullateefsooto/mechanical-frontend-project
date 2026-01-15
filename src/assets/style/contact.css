@@ -35,6 +35,9 @@ h3, h2{
   display: flex;
   gap: 16px;
   color: #6b7280;
+  text-transform: capitalize;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: large;
 }
 
 .contact-icon {
@@ -44,11 +47,11 @@ h3, h2{
 }
 
 .contact-icon.wide {
-  width: 80px;
+  width: 40%;
 }
 
 .contact-icon.crane {
-  width: 100px;
+  width: 40%;
 }
 
 /* FORM */
@@ -82,6 +85,8 @@ h3, h2{
   border-radius: 12px;
   padding: 16px;
   font-size: 16px;
+  text-tra;
+  text-transform: capitalize
 }
 
 .contact-form textarea {
@@ -149,6 +154,9 @@ h3, h2{
 .appointment-card p {
   margin: 20px 0;
   color: #6b7280;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  text-transform: capitalize;
 }
 
 .appointment-btn {
@@ -158,7 +166,6 @@ h3, h2{
   padding: 12px 20px;
   border-radius: 14px;
   text-decoration: none;
-  font-size: 1px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-transform: capitalize;
 

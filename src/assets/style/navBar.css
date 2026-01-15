@@ -60,10 +60,21 @@ body { font-family:"Poppins", sans-serif; }
   transition:0.3s;
   text-transform:capitalize;
 }
-.btn-book { background:#ef4444; color:white; }
-.btn-book:hover { background:#ff5f5f; }
-.btn-call { background:#f3f4f6; color:#ef4444; }
-.btn-call:hover { background:white; color:#ff2b2b; }
+.btn-book { 
+  background:#ef4444; 
+  color:white; 
+}
+.btn-book:hover { 
+  background:#ff5f5f; 
+}
+.btn-call { 
+  background:#f3f4f6; 
+  color:#ef4444; 
+}
+.btn-call:hover { 
+  background:white; 
+  color:#ff2b2b; 
+}
 
 /* HAMBURGER */
 .hamburger {

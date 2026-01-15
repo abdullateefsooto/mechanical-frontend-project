@@ -20,7 +20,6 @@ const Service = () => {
   return (
     <div className="service-section">
       <h1 className="service-title">our services</h1>
-      <p className='line'></p>
 
       <div className="service-flex">
         {services.map((item, index) => (
@@ -34,6 +33,7 @@ const Service = () => {
           </div>
         ))}
       </div>
+
     </div>
   )
 }

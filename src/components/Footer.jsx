@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="footer-card">
             <h3>24/7 Assistance</h3>
             <div className="footer-flex">
-              <IconCarCrane className="footer-icon" />
+              <IconCarCrane stroke={1.75} className="footer-icon" />
               <div className="footer-info">
                 <p>Each customer has an account manager to respond to your vehicle needs during and outside office hours.</p>
               </div>
@@ -48,9 +48,9 @@ const Footer = () => {
             <h4>About Us</h4>
             <p>Ar-Raman Sooto Autocare delivers top-notch vehicle maintenance and repair services across Nigeria.</p>
             <div className="footer-contact-links">
-              <a href="http://wa.me/+2348033445250"><IconBrandWhatsapp /></a>
-              <a href="mailto:arramansooto01@gmail.com"><IconMail /></a>
-              <a href="tel:+2348033445250"><IconPhone /></a>
+              <a href="http://wa.me/+2348033445250" target="_blank"><IconBrandWhatsapp /></a>
+              <a href="mailto:arramansooto01@gmail.com" target="_blank"><IconMail /></a>
+              <a href="tel:+2348033445250" target="_blank"><IconPhone /></a>
             </div>
           </div>
 

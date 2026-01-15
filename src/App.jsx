@@ -8,7 +8,6 @@ import BookingForm from './components/BookingForm';
 function App() {
   
 const router = createBrowserRouter([
-  
   {
     path:'/',
     element: <HomeLayOut />,

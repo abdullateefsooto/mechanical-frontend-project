@@ -149,4 +149,20 @@
   .about-title {
     font-size: 36px;
   }
+  .cng {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cng img {
+    max-width: 100%;
+  }
+  .mission-images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission-image-lg,
+  .mission-image-sm {
+    width: 100%;
+    max-width: 100%;
+  }
 }

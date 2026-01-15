@@ -1,19 +1,55 @@
-import {
-  IconBrandWhatsapp,
-  IconCarCrane,
-  IconLocation,
-  IconPercentage,
-} from "@tabler/icons-react";
+import { useState } from "react";
+import { IconBrandWhatsapp, IconCarCrane, IconLocation, IconPercentage } from "@tabler/icons-react";
 import "../assets/style/contact.css";
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent! We will get back to you soon.");
+
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE,
+      {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(() => {
+      setName(""); setEmail(""); setPhone(""); setMessage("");
+      toast.success("message sent successfully ✅");
+    })
+    .catch((err) => {
+      console.error(err);
+      toast.failed("Failed to send message ❌");
+    });
   };
 
+
   return (
+    <div>
+    <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      closeOnClick
+      pauseOnHover
+      draggable
+      theme="dark"
+    />
     <section className="contact-section">
       <div className="contact-container">
 
@@ -31,7 +67,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-box">
-            <h3>Ar-Raman Sooto Autocare</h3>
+            <h3>Ar-Rahman Sooto Autocare</h3>
             <div className="contact-box-row">
               <IconLocation className="contact-icon wide" />
               <p>
@@ -57,17 +93,49 @@ const Contact = () => {
         <div className="contact-form-wrapper">
           <h2>drop us a message</h2>
 
-          <form onSubmit={handleSubmit} className="contact-form">
-            <div className="contact-form-left">
-              <input type="text" placeholder="your name" />
-              <input type="email" placeholder="your email" />
-              <input type="tel" placeholder="your phone" />
+          <form onSubmit={handleSubmit} >
+            <div className="contact-form">
+                  <div className="contact-form-left">
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="your name" 
+                  value={name} 
+                  onChange={(e) => setName(e.target.value)} 
+                  required
+                />
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="your email" 
+                  value={email} 
+                  style={{textTransform:"lowercase"}}
+                  onChange={(e) => setEmail(e.target.value)} 
+                  required
+                />
+                <input 
+                  type="tel" 
+                  name="phone"
+                  placeholder="your phone" 
+                  value={phone} 
+                  onChange={(e) => setPhone(e.target.value)} 
+                  required
+                />
+              </div>
+
+              <textarea 
+                name="message"
+                placeholder="message" 
+                value={message} 
+                onChange={(e) => setMessage(e.target.value)} 
+                required
+              />
             </div>
 
-            <textarea placeholder="message"></textarea>
+            <button type="submit" className="contact-btn">
+              send message
+            </button>
           </form>
-
-          <button className="contact-btn">send message</button>
         </div>
 
         {/* MAP + APPOINTMENT */}
@@ -79,7 +147,7 @@ const Contact = () => {
               className="contact-map"
               allowFullScreen=""
               referrerPolicy={"no-referrer-when-downgrade"}>
-           </iframe>
+          </iframe>
 
           <div className="appointment-card">
             <IconPercentage className="appointment-icon" />
@@ -95,6 +163,7 @@ const Contact = () => {
 
       </div>
     </section>
+  </div>
   );
 };
 
