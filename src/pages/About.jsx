@@ -7,6 +7,8 @@ import "../assets/style/about.css";
 
 
 const About = () => {
+
+    
   return (
     <div className="about-section">
       <h1 className="about-title">about us</h1>

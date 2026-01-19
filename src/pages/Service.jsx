@@ -29,13 +29,13 @@ const Service = () => {
     mm.add({
       // Mobile
       "(max-width: 768px)": () => {
-        gsap.from(".service-card", {
+        gsap.from(".service-section", {
           y: 50,
           opacity: 0,
           duration: 0.8,
           stagger: 0.2,
           scrollTrigger: {
-            trigger: ".service-card",
+            trigger: ".service-section",
             start: "top 90%",
             toggleActions: "play none none reverse",
           },
@@ -44,13 +44,13 @@ const Service = () => {
 
       // Desktop
       "(min-width: 769px)": () => {
-        gsap.from(".service-card", {
+        gsap.from(".service-section", {
           y: 100,
           opacity: 0,
           duration: 1,
           stagger: 0.3,
           scrollTrigger: {
-            trigger: ".service-card",
+            trigger: ".service-section",
             start: "top 80%",
             toggleActions: "play none none reverse",
           },

@@ -3,10 +3,22 @@ import lx from '../assets/image/LX.jpg';
 import heroImg from '../assets/image/TOYODA.jpg';
 import "../assets/style/home.css";
 import { Link } from 'react-router-dom';
+import { useEffect, useRef } from "react";
+import gsap from 'gsap';
 
 const Home = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const heroElement = heroRef.current;
+    gsap.fromTo(
+      heroElement,
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1.5, ease: 'power2.out' }
+    );
+  }, []);
   return (
-    <div className="home-container">
+    <div ref={heroRef} className="home-container">
 
       {/* HERO BANNER */}
       <section className="hero-overlay">
@@ -117,3 +129,9 @@ const Home = () => {
 }
 
 export default Home;
+
+
+
+
+
+

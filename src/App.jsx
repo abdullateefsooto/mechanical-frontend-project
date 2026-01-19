@@ -3,12 +3,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import { About, Contact, Home, HomeLayOut, Service } from './pages'
 import BookingForm from './components/BookingForm';
+import ScrollToTop from "./components/ScrollToTop"
 
 
 function App() {
-  
-const router = createBrowserRouter([
-  {
+  const router = createBrowserRouter([
+    {
     path:'/',
     element: <HomeLayOut />,
     children: [
@@ -36,7 +36,8 @@ const router = createBrowserRouter([
     ]
   }
 ])
-  return (
+return (
+    <ScrollToTop />,
     <RouterProvider router={router} />
   )
 }
