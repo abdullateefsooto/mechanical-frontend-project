@@ -7,8 +7,9 @@ import ScrollToTop from "./components/ScrollToTop"
 
 
 function App() {
-  const router = createBrowserRouter([
-    {
+
+const router = createBrowserRouter([
+  {
     path:'/',
     element: <HomeLayOut />,
     children: [
@@ -38,6 +39,7 @@ function App() {
 ])
 return (
     <ScrollToTop />,
+
     <RouterProvider router={router} />
   )
 }
