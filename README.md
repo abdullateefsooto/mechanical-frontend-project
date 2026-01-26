@@ -37,7 +37,7 @@ Follow these steps to run the project locally.
 ### Installation
 
 ```bash
-git https://github.com/abdullateefsooto/mechanical-frontend-project
+git https://github.com/abdullateefsooto/arraman-sooto
 cd mechanic-website
 npm install
 npm run dev
