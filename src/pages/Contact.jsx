@@ -61,7 +61,7 @@ const Contact = () => {
             <div className="contact-box-row">
               <IconBrandWhatsapp className="contact-icon" />
               <div>
-                <p>mobile: <span>08066244696</span></p>
+                <p>mobile: <span>08033445250</span></p>
                 <p>assistance: <span>07063470681</span></p>
               </div>
             </div>
